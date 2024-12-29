@@ -45,3 +45,24 @@ console.log("User Category: ", userCategory);
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "User is authenticated" : "User is not authenticated";
 console.log("Authentication Status: ", authenticationStatus);
+
+let personType = "Enrolled Member";
+let dietaryMessage;
+
+switch (personType){
+    case "employee":
+        dietaryMessage = "You have access to the Dietary Services";
+        break;
+    case "Enrolled Member":
+        dietaryMessage = "You have access to the Dietary Services & one-and-one consultation with a dietitian";
+        break;
+    case "subscriber":
+        dietaryMessage = "You have access to a partial access to facilitate the Dietary Services";
+        break;
+    case "guest":
+        dietaryMessage = "You have to enroll to access the Dietary Services";
+        break;
+    default:
+        dietaryMessage = "Unknown person";
+}
+console.log("Dietary Message: ", dietaryMessage);
