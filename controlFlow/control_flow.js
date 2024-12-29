@@ -66,3 +66,4 @@ switch (personType){
         dietaryMessage = "Unknown person";
 }
 console.log("Dietary Message: ", dietaryMessage);
+
