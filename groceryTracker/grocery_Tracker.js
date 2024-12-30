@@ -22,3 +22,18 @@ const closure = outerFunction();
 
 // Invoke the closure function, which logs the value of outerVar to the console
 closure(); // I am outside!
+
+// another example
+function greet(name) {
+    const greeting = "Hello, ";
+    function sayHello() {
+        console.log(greeting + name);
+    }
+    return sayHello;
+}
+
+const greetJohn = greet("John");
+const greetJane = greet("Jane");
+
+greetJohn(); // Hello, John
+greetJane(); // Hello, Jane
