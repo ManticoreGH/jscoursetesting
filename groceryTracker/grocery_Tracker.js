@@ -37,3 +37,10 @@ const greetJane = greet("Jane");
 
 greetJohn(); // Hello, John
 greetJane(); // Hello, Jane
+
+// Function hoisting
+sayHello();
+// This works even though the function is defined below the call
+function sayHello() {
+    console.log("Hello!");
+}
