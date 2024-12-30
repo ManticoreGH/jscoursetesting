@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handler</title>
+</head>
+<body>
+
+    <!-- Simple way of managing click event on a button -->
+    <!-- <button id="myButton" onclick="handleButtonClick()">Click me</button>
+    <script>
+        function handleButtonClick() {
+            console.log('Button clicked!');
+        }
+    </script> -->
+
+    <!-- addEventListener() over a button -->
+    <button id="myButton">Click me</button>
+    <script>
+        // Get the button element
+        const button = document.getElementById('myButton');
+        
+        // Add event listener for 'click' event
+        button.addEventListener('click', handleButtonClick);
+        
+        // Function to handle button click
+        function handleButtonClick() {
+            console.log('Button clicked!');
+        }
+    </script>
+    <!-- The addEventListener() method allows you to add event listeners to any DOM element. -->
+    <!-- The addEventListener() with an anonymous functin -->
+    <button id="clickButton">Click Me!</button>
+    <script>
+    document.getElementById('clickButton').addEventListener('click', function() {
+        alert('Button clicked!');
+    });
+</script>    
+    <!-- The Mouseover event -->
+    <div id="moveArea" style="width: 200px; height: 200px; background-color: lightcoral;"></div>
+
+    <script>
+      const moveArea = document.getElementById('moveArea');
+    
+      moveArea.addEventListener('mousemove', function(event) {
+        console.log(`Mouse coordinates - X: ${event.clientX}, Y: ${event.clientY}`);
+      });
+    </script>
+    >
+    <!-- The keyboard events -->
+    <!-- The keydown event is fired when a key is pressed down. -->
+    <!-- The keyup event is fired when a key is released. -->
+    <input type="text" id="keyInput">
+    <script>
+        const keyInput = document.getElementById('keyInput');
+
+        keyInput.addEventListener('keydown', function() {
+            console.log('Key pressed down!');
+        });
+        keyInput.addEventListener('keyup', function() {
+            console.log('Key released!');
+        });
+    </script>
+    >
+    >
+    <!-- The keypress event -->
+    <!-- The keypress event is fired when a key is pressed down and that key normally produces a character value. -->
+    <input type="text" id="pressInput">
+    <script>
+        const pressInput = document.getElementById('pressInput');
+
+        pressInput.addEventListener('keypress', function() {
+            console.log('Key pressed!');
+        });
+    </script>
+    <!-- The submit event -->
+    <!-- The submit event is fired when a form is submitted. -->
+    <form id="myForm">
+        <input type="text" id="textInput">
+        <input type="text" id="changeInput">
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+            console.log('Form submitted!');
+        });
+        // The change event
+        // The change event is fired when the value of an input element is changed.
+        const changeInput = document.getElementById('changeInput');
+        changeInput.addEventListener('change', function() {
+            console.log('Input value changed!');
+        });
+    </script>
+    <!-- The focus and blur events -->
+    <!-- The focus event is fired when an element receives focus. -->
+    <!-- The blur event is fired when an element loses focus. -->
+    // <input type="text" id="textInput2" placeholder="Click here">
+    <script>
+        const textInput2 = document.getElementById('textInput2');
+
+        textInput2.addEventListener('focus', function() {
+            console.log('Input focused');
+        });
+        textInput2.addEventListener('blur', function() {
+            console.log('Input blurred');
+        });
+    </script>
+    <!-- The Window events -->
+    <!-- The load event -->
+    <!-- The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images. -->
+    <script>
+        window.addEventListener('load', function() {
+            console.log('Page and all resources loaded');
+        });
+    </script>
+    <script>
+        window.addEventListener('resize', function() {
+            console.log('Window resized');
+        });
+    </script>
+    <!--Scroll event-->
+    <script>
+        window.addEventListener('scroll', function() {
+            console.log('Window scrolled');
+        });
+    </script>
+</body>
+</html>
