@@ -6,14 +6,15 @@ function performOperation() {
     if(!isNaN(num1) && !isNaN(num2)) {
         // Perform operation and display result.
         let mResult = multiply(num1, num2);
-        let dResult = 0;
+        // Convert input values to numbers. Otherwise, they will be treated as strings.
+        let aResult = add(Number(num1),Number(num2));
+        let sResult = subtract(num1, num2);
+        let dResult;
         if (Number(num2) !== 0) {
             dResult = divide(num1, num2);
         } else {
             dResult = `Cannot divide by zero`;
         }
-        let aResult = add(Number(num1),Number(num2));
-        let sResult = subtract(num1, num2);
         let result = `Multiplication: ${mResult}, Division: ${dResult}, Addition: ${aResult}, Subtraction: ${sResult}`;
         // Display result.
         displayResult(result);
